@@ -1,0 +1,415 @@
+<!-- <div class="container" style="padding-top: 70px;">
+    <div class="row" style="width: 900px;">
+        <div
+            style="font-size: 30px; font-family: 'Times New Roman', Times, serif; text-align: center; background-color: black; color: white; width: 900px;">
+            <b>Add New Bus</b>
+        </div>
+
+        <div class="row" style="padding-top: 20px; ">
+            <div class="col-5"
+                style="text-align: right; font-family: 'Times New Roman', Times, serif; font-size: 25px;padding-top: 5px;">
+                <b> Voucher Code:</b>
+            </div>
+            <div class="col-7" style="text-align: left;">
+                <mat-form-field style="width: 400px;">
+
+                    <mat-label>Voucher Code</mat-label>
+                    <input matInput placeholder="Voucher code" >
+                </mat-form-field>
+            </div>
+        </div>
+
+
+        <div class="row" style="padding-top: 20px; ">
+            <div class="col-5"
+                style="text-align: right; font-family: 'Times New Roman', Times, serif; font-size: 25px;padding-top: 5px;">
+                <b> Minimum Amount:</b>
+            </div>
+            <div class="col-7" style="text-align: left;">
+                <mat-form-field style="width: 400px;">
+
+                    <mat-label>Minimum Amount:</mat-label>
+                    <input matInput placeholder="Minimum Amount" >
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row" style="padding-top: 20px; ">
+            <div class="col-5"
+                style="text-align: right; font-family: 'Times New Roman', Times, serif; font-size: 25px;padding-top: 5px;">
+                <b> Discount Percentage:</b>
+            </div>
+            <div class="col-7" style="text-align: left;">
+                <mat-form-field style="width: 400px;">
+
+                    <mat-label>Discount Percentage</mat-label>
+                    <input matInput placeholder="Discount Percentage" >
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row" style="padding-top: 20px; ">
+            <div class="col-5"
+                style="text-align: right; font-family: 'Times New Roman', Times, serif; font-size: 25px;padding-top: 5px;">
+                <b> Voucher End Date:</b>
+            </div>
+            <div class="col-7" style="text-align: left;">
+
+
+                <input type="date" placeholder=" Voucher End Date" >
+            </div>
+        </div>
+
+
+        <div class="row" style=" padding-top: 30px;  ">
+            <button mat-raised-button color="primary" style="width: 200px; margin-left: 300px;" >Submit Voucher</button>
+
+        </div>
+
+    </div>
+</div> -->
+
+
+<!-- <button mat-raised-button  id="toggle-linear">
+    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+  </button> -->
+
+<div class="container" style="padding-top: 70px;">
+    <div class="row" style="width: 900px;">
+        <mat-stepper [linear]="true" #stepper>
+            <mat-step>
+                <form>
+                    <ng-template matStepLabel>Add bus details</ng-template>
+                    <div class="row">
+                        <div class="col-5"
+                            style="text-align: right; font-family: 'Times New Roman', Times, serif; font-size: 20px;padding-top: 5px;">
+                            <b> Bus Name:</b>
+                        </div>
+                        <div class="col-7" style="text-align: left;">
+                            <mat-form-field style="width: 400px; height: 70px;">
+
+                                <!-- <mat-label>Voucher Code</mat-label> -->
+                                <input matInput placeholder="Bus Name" name="busName"
+                                    [(ngModel)]="addNewBusRequest.busName">
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-5"
+                            style="text-align: right; font-family: 'Times New Roman', Times, serif; font-size: 20px;">
+                            <b> Source:</b>
+                        </div>
+                        <div class="col-7" style="text-align: left; ">
+                            <mat-form-field style="width: 400px; height: 70px;">
+
+                                <!-- <mat-label>Voucher Code</mat-label> -->
+                                <input matInput placeholder="Source" name="source"
+                                    [(ngModel)]="addNewBusRequest.source">
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-5"
+                            style="text-align: right; font-family: 'Times New Roman', Times, serif; font-size: 20px;">
+                            <b> Destination:</b>
+                        </div>
+                        <div class="col-7" style="text-align: left;">
+                            <mat-form-field style="width: 400px; height: 70px;">
+
+                                <!-- <mat-label>Voucher Code</mat-label> -->
+                                <input matInput placeholder="Destination" name="destination"
+                                    [(ngModel)]="addNewBusRequest.destination">
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-5"
+                            style="text-align: right; font-family: 'Times New Roman', Times, serif; font-size: 20px;">
+                            <b> Boarding Point:</b>
+                        </div>
+                        <div class="col-7" style="text-align: left;">
+                            <mat-form-field style="width: 400px; height: 70px;">
+
+                                <!-- <mat-label>Voucher Code</mat-label> -->
+                                <input matInput placeholder="Boarding Point" name="boardingPoint"
+                                    [(ngModel)]="addNewBusRequest.boardingPoint">
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-5"
+                            style="text-align: right; font-family: 'Times New Roman', Times, serif; font-size: 20px;">
+                            <b> Dropping Point:</b>
+                        </div>
+                        <div class="col-7" style="text-align: left;">
+                            <mat-form-field style="width: 400px; height: 70px;">
+
+                                <!-- <mat-label>Voucher Code</mat-label> -->
+                                <input matInput placeholder="Dropping Point" name="droppingPoint"
+                                    [(ngModel)]="addNewBusRequest.droppingPoint">
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-5"
+                            style="text-align: right; font-family: 'Times New Roman', Times, serif; font-size: 20px;">
+                            <b> Departure Date:</b>
+                        </div>
+                        <div class="col-7" style="text-align: left;">
+                            <form style="width: 400px; height: 70px;">
+
+                                <!-- <mat-label>Voucher Code</mat-label> -->
+                                <input type="date" placeholder="Departure Date" name="departureDate"
+                                    [(ngModel)]="addNewBusRequest.departureDate">
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-5"
+                            style="text-align: right; font-family: 'Times New Roman', Times, serif; font-size: 20px;">
+                            <b> Departure Time:</b>
+                        </div>
+                        <div class="col-7" style="text-align: left;">
+                            <form style="width: 400px; height: 70px;">
+
+                                <!-- <mat-label>Voucher Code</mat-label> -->
+                                <input type="time" placeholder="Departure Time" name="departureTime"
+                                    [(ngModel)]="addNewBusRequest.departureTime">
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-5"
+                            style="text-align: right; font-family: 'Times New Roman', Times, serif; font-size: 20px;">
+                            <b> Coach Type:</b>
+                        </div>
+                        <div class="col-7" style="text-align: left;">
+                            <mat-radio-group aria-label="Select an option" name="coachType"
+                                [(ngModel)]="addNewBusRequest.coachType">
+                                <mat-radio-button value="AC coach">AC coach</mat-radio-button>
+                                <mat-radio-button value="Non-AC coach">Non-AC coach</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-5"
+                            style="text-align: right; font-family: 'Times New Roman', Times, serif; font-size: 20px;">
+                            <b> Total Available Seats:</b>
+                        </div>
+                        <div class="col-7" style="text-align: left;">
+                            <mat-radio-group aria-label="Select an option">
+                                <mat-radio-button value="24" checked>24 Seats</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                    </div>
+                    <div style="text-align: right;">
+                        <button mat-raised-button matStepperNext color="primary" (click)="convertTime()">Next</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step label="Add more details">
+                <form>
+                    <div class="row" style="padding-top: 10px;">
+                        <div class="col-5"
+                            style="text-align: right; font-family: 'Times New Roman', Times, serif; font-size: 20px;padding-top: 5px;">
+                            <b> Amenities:</b>
+                        </div>
+                        <div class="col-5" style="text-align: left;">
+                            <mat-form-field style="width: 300px; height: 70px;">
+
+                                <!-- <mat-label>Voucher Code</mat-label> -->
+                                <input matInput placeholder="Eg: Reading Lamp and Charger" name="amenities"
+                                    [(ngModel)]="amenity">
+
+                            </mat-form-field>
+
+                        </div>
+                        <div class="col-2">
+                            <button mat-raised-button color="warn" (click)="addNewAmenity()" style="padding: 5px;">Add
+                                Amenity</button>
+
+                        </div>
+                    </div>
+
+                    <div class="row" style="padding-top: 10px;">
+                        <div class="col-5"
+                            style="text-align: right; font-family: 'Times New Roman', Times, serif; font-size: 20px;padding-top: 5px;">
+                            <b> Classes Available:</b>
+                        </div>
+                        <div class="col-5" style="text-align: left;">
+                            <mat-form-field style="width: 300px; height: 70px;">
+
+                                <!-- <mat-label>Voucher Code</mat-label> -->
+                                <input matInput placeholder="Eg: Economy" name="classAvailable"
+                                    [(ngModel)]="classAvailable">
+
+                            </mat-form-field>
+
+                        </div>
+                        <div class="col-2">
+                            <button mat-raised-button color="warn" (click)="addNewclassAvailable()"
+                                style="padding: 5px;">Add
+                                Class</button>
+
+                        </div>
+                    </div>
+
+                    <div class="row" style="padding-top: 10px;">
+                        <div class="col-5"
+                            style="text-align: right; font-family: 'Times New Roman', Times, serif; font-size: 20px;padding-top: 5px;">
+                            <b>Booking Policies:</b>
+                        </div>
+                        <div class="col-5" style="text-align: left;">
+                            <mat-form-field style="width: 300px; height: 70px;">
+
+                                <!-- <mat-label>Voucher Code</mat-label> -->
+                                <input matInput placeholder="Eg: No Refund Policy" name="bookingPolicy"
+                                    [(ngModel)]="bookingPolicy">
+
+                            </mat-form-field>
+
+                        </div>
+                        <div class="col-2">
+                            <button mat-raised-button color="warn" (click)="addNewBookingPolicy()"
+                                style="padding: 5px;">Add
+                                Booking Policy</button>
+
+                        </div>
+                    </div>
+
+                    <div class="row" style="padding-top: 10px;">
+                        <div class="col-2"
+                            style="text-align: right; font-family: 'Times New Roman', Times, serif; font-size: 20px;padding-top: 5px;">
+                            <b>Class:</b>
+                        </div>
+                        <div class="col-3" style="text-align: left;">
+                            <mat-form-field style="width: 200px; height: 70px;">
+
+                                <!-- <mat-label>Voucher Code</mat-label> -->
+                                <select name="classnameo" matNativeControl [(ngModel)]="classWithFare.className">
+                                    <option *ngFor="let class of addNewBusRequest.classAvailable" name="classNamei"
+                                        value="{{class}}">{{class | titlecase}}</option>
+
+                                </select>
+
+                            </mat-form-field>
+
+                        </div>
+                        <div class="col-2"
+                            style="text-align: right; font-family: 'Times New Roman', Times, serif; font-size: 20px;padding-top: 5px;">
+                            <b>Fare:</b>
+                        </div>
+                        <div class="col-3" style="text-align: left;">
+                            <mat-form-field style="width: 200px; height: 70px;">
+
+                                <input matInput placeholder="Eg: 150" name="Fare" [(ngModel)]="classWithFare.fare">
+
+                            </mat-form-field>
+
+                        </div>
+                        <div class="col-2">
+                            <button mat-raised-button color="warn" (click)="addNewClassWithFare()"
+                                style="padding: 5px;">Add
+                                Record</button>
+
+                        </div>
+                    </div>
+
+                    <div style="text-align: center;">
+                        <button mat-raised-button matStepperPrevious color="primary"
+                            style="margin-right: 5px;">Back</button>
+                        <button mat-raised-button matStepperNext color="primary" (click)="submitBus()">Submit
+                            Bus</button>
+
+                    </div>
+
+                </form>
+            </mat-step>
+
+            <mat-step label="Fill Seats Information">
+                <form>
+                    <div style="text-align: center;">
+
+                        <div class="row" style="width: 750px; padding-top: 50px; ">
+                            <table class="table table-striped">
+                                <thead>
+                                    <th>Seat Number From</th>
+                                    <th>Seat Number To</th>
+                                    <th style="margin-left: 80px;">Class Name</th>
+                                    <th style="margin-left: 80px;">Action</th>
+                                </thead>
+                            </table>
+                        </div>
+
+                        <div class="row" style="padding-top: 10px;">
+
+                            <div class="col-3" style="text-align: left;">
+                                <mat-form-field style="width: 200px; height: 70px;">
+
+                                    <!-- <mat-label>Voucher Code</mat-label> -->
+                                    <select name="classnameo" matNativeControl [(ngModel)]="seatData.seatNumberFrom">
+                                        <option *ngFor="let seatnumber of seatsNumber" name="seatnofrom"
+                                            value="{{seatnumber}}">{{seatnumber}}</option>
+
+                                    </select>
+
+                                </mat-form-field>
+
+                            </div>
+
+                            <div class="col-3" style="text-align: left;">
+                                <mat-form-field style="width: 200px; height: 70px;">
+
+                                    <!-- <mat-label>Voucher Code</mat-label> -->
+                                    <select name="classnameo" matNativeControl [(ngModel)]="seatData.seatNumberTo">
+                                        <option *ngFor="let seatnumber of seatsNumber" name="seatnoto"
+                                            value="{{seatnumber}}">{{seatnumber}}</option>
+
+                                    </select>
+
+                                </mat-form-field>
+
+                            </div>
+
+                            <div class="col-3" style="text-align: left;">
+                                <mat-form-field style="width: 200px; height: 70px;">
+
+                                    <!-- <mat-label>Voucher Code</mat-label> -->
+                                    <select name="classnameo" matNativeControl [(ngModel)]="seatData.className">
+                                        <option *ngFor="let classn of addNewBusRequest.classAvailable" name="classNamei"
+                                            value="{{classn}}">{{classn | titlecase}}</option>
+
+                                    </select>
+
+                                </mat-form-field>
+
+                            </div>
+
+
+                            <div class="col-2">
+                                <button mat-raised-button color="warn" (click)="addSeats()" style="padding: 5px;">Add
+                                    Seats</button>
+
+                            </div>
+                        </div>
+
+                        <button mat-raised-button matStepperPrevious color="primary"
+                            style="margin-right: 5px;">Back</button>
+                        <button mat-raised-button color="primary" (click)="submitSeatsData()">Submit Seats Data</button>
+
+                    </div>
+                </form>
+            </mat-step>
+
+        </mat-stepper>
+    </div>
+</div>

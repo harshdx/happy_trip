@@ -1,0 +1,72 @@
+<div class="container" style="padding-top: 70px;">
+    <div class="row" style="width: 900px;">
+        <div
+            style="font-size: 30px; font-family: 'Times New Roman', Times, serif; text-align: center; background-color: black; color: white; width: 900px;">
+            <b>Add New Voucher</b>
+        </div>
+
+        <div class="row" style="padding-top: 20px; ">
+            <div class="col-5"
+                style="text-align: right; font-family: 'Times New Roman', Times, serif; font-size: 25px;padding-top: 5px;">
+                <b> Voucher Code:</b>
+            </div>
+            <div class="col-7" style="text-align: left;">
+                <mat-form-field style="width: 400px;">
+
+                    <mat-label>Voucher Code</mat-label>
+                    <input matInput placeholder="Voucher code" [(ngModel)]="addNewVoucherRequest.voucherCode">
+                </mat-form-field>
+            </div>
+        </div>
+
+
+        <div class="row" style="padding-top: 20px; ">
+            <div class="col-5"
+                style="text-align: right; font-family: 'Times New Roman', Times, serif; font-size: 25px;padding-top: 5px;">
+                <b> Minimum Amount:</b>
+            </div>
+            <div class="col-7" style="text-align: left;">
+                <mat-form-field style="width: 400px;">
+
+                    <mat-label>Minimum Amount:</mat-label>
+                    <input matInput placeholder="Minimum Amount" [(ngModel)]="addNewVoucherRequest.minimumAmount">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row" style="padding-top: 20px; ">
+            <div class="col-5"
+                style="text-align: right; font-family: 'Times New Roman', Times, serif; font-size: 25px;padding-top: 5px;">
+                <b> Discount Percentage:</b>
+            </div>
+            <div class="col-7" style="text-align: left;">
+                <mat-form-field style="width: 400px;">
+
+                    <mat-label>Discount Percentage</mat-label>
+                    <input matInput placeholder="Discount Percentage" [(ngModel)]="addNewVoucherRequest.discountPercent">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row" style="padding-top: 20px; ">
+            <div class="col-5"
+                style="text-align: right; font-family: 'Times New Roman', Times, serif; font-size: 25px;padding-top: 5px;">
+                <b> Voucher End Date:</b>
+            </div>
+            <div class="col-7" style="text-align: left;">
+                <!-- <mat-form-field style="width: 600px;"> -->
+
+
+                <input type="date" placeholder=" Voucher End Date" [(ngModel)]="addNewVoucherRequest.voucherEndDate">
+                <!-- </mat-form-field> -->
+            </div>
+        </div>
+
+
+        <div class="row" style=" padding-top: 30px;  ">
+            <button mat-raised-button color="primary" style="width: 200px; margin-left: 300px;" (click)="submitVoucher()">Submit Voucher</button>
+
+        </div>
+
+    </div>
+</div>

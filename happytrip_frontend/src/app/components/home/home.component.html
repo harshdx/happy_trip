@@ -1,0 +1,63 @@
+<!-- <div class="container"  style="text-align: center;"> -->
+<div class="row image">
+    <form (ngSubmit)="getAllBusesSubmit()" #form="ngForm" style="width: 900px; border-radius: 20px; padding-top: 120px; padding-left: 50px;">
+        <div class="row" style="border: 2px solid rgb(133, 0, 0); border-radius: 30px;">
+            <div class="col-3" style="background-color: rgb(209, 255, 188); border-top-left-radius:30px ;border-bottom-left-radius:30px ; border-right: solid 2px rgb(133, 0, 0);">
+                <div class="row" style="height: 100px; width: 200px;">
+                    <div class="col-2" style="text-align: center; padding-top: 35px;">
+                        <mat-icon style="color: green;">start</mat-icon>
+                    </div>
+                    <div class="col-10">
+                        <div style="text-align: center; font-family: 'Times New Roman', Times, serif;">FROM</div>
+                        <div style="text-align: center;"><input type="text" name="source" [(ngModel)]="getallbusespayload.source" style="width: 150px; border: 1px solid rgb(204, 28, 28); border-radius: 10px; margin-top: 10px;"></div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3" style="background-color: rgb(255, 189, 189); border-right: solid 2px rgb(133, 0, 0);">
+                <div class="row" style="height: 100px; width: 200px;">
+                    <div class="col-2" style="text-align: center; padding-top: 35px;">
+                        <mat-icon style="color: red;">pin_drop</mat-icon>
+                    </div>
+                    <div class="col-10">
+                        <div style="text-align: center; font-family:'Times New Roman', Times, serif;">TO</div>
+                        <div style="text-align: center;"><input type="text" name="destination" [(ngModel)]="getallbusespayload.destination" style="width: 150px; border: 1px solid rgb(204, 28, 28); border-radius: 10px; margin-top: 10px;"></div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3" style="background-color: rgb(217, 220, 248);  border-right: solid 2px rgb(133, 0, 0);">
+                <div class="row" style="height: 100px; width: 200px;">
+                    <div class="col-2" style="text-align: center; padding-top: 35px;">
+                        <mat-icon style="color: rgb(0, 34, 146);">calendar_month</mat-icon>
+                    </div>
+                    <div class="col-10">
+                        <div style="text-align: center; font-family: 'Times New Roman', Times, serif;">Date</div>
+                        <div style="text-align: center;"><input type="date" name="departureDate" [(ngModel)]="getallbusespayload.departureDate" style="width: 150px; border: 1px solid rgb(204, 28, 28); border-radius: 10px; margin-top: 10px;"></div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-3" style="background-color: rgb(255, 28, 28); border-top-right-radius:25px ;border-bottom-right-radius:25px ;">
+                <button type="submit" mat-button style="width: 200px; height: 100px; color:white; border-bottom-right-radius:30px;  border-top-right-radius:30px">
+                    <div style="font-size: 24px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">SEARCH BUSES</div>
+                <!-- <div class="row" style="height: 100px; width: 200px;"> -->
+                    <!-- <div class="col-3" style="text-align: center; padding-top: 35px;">
+                        <mat-icon>search</mat-icon>
+                    </div> -->
+                    <!-- <div class="col-9">
+                        <div style="text-align: center;">FROM</div>
+                        <div style="text-align: center;"><input type="text" style="width: 150px; border: 1px solid rgb(204, 28, 28); border-radius: 30px; margin-top: 10px;"></div>
+
+                    </div> -->
+                <!-- </div> -->
+                </button>
+            </div>
+
+        </div>
+    </form>
+</div>
+<!-- </div> -->

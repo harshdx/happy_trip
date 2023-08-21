@@ -1,0 +1,59 @@
+<div class="container-fluid" style="margin-top: 100px; height: 300px; width: 600px;">
+    <div style="text-align: right; padding-bottom: 20px;">
+        <button mat-raised-button color="primary" (click)="openDialog()">Cancel Ticket</button>
+    </div>
+    <div class="row">
+
+        <mat-card style="border: 1px solid black;">
+            <div
+                style="text-align: center; font-family: 'Times New Roman', Times, serif; background-color: black; color: white;">
+                <h2><mat-icon>confirmation_number</mat-icon>&nbsp; BUS TICKET </h2>
+            </div>
+            <mat-card-content style="background-color: rgb(247, 248, 152);">
+                <div style="font-family:'Times New Roman', Times, serif; font-size: 30px;">
+                    TICKET ID: &nbsp;<b> {{ticketResponse.ticketId}}</b>
+                </div>
+                <div class="row">
+                    <div class="col-7"
+                        style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+                        <div>
+                            <b> {{ticketResponse.source | titlecase}}&nbsp; </b> to <b>
+                                &nbsp;{{ticketResponse.destination | titlecase}} </b>
+                        </div>
+                        <div>
+                            <b> {{ticketResponse.departureDate | titlecase | date}} | {{ticketResponse.departureTime |
+                                titlecase | date:'HH:MM'}} </b>
+                        </div>
+                        <div>
+                            Booked Seats: {{ticketResponse.seatsBooked | titlecase}}
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div>
+                            <b>{{ticketsQuantity}}</b> &nbsp; tickets
+                        </div>
+                        <div>
+                            <b> {{ticketResponse.coachType}} </b> coach
+                        </div>
+                        <div *ngIf="ticketResponse.ticketStatus==='Active' && isTicketCancelled===false">
+                            Status: <b style="color: green;"> Active </b>
+                        </div>
+                        <div *ngIf="ticketResponse.ticketStatus==='cancelled' || isTicketCancelled===true">
+                            Status: <b style="color: red;"> Cancelled </b>
+                        </div>
+                        <div *ngIf="ticketResponse.ticketStatus==='cancelled' || isTicketCancelled===true">
+                            Cancellation Date: <b > {{cancellationDate | date}} </b>
+                        </div>
+                        <div *ngIf="ticketResponse.ticketStatus==='cancelled' || isTicketCancelled===true">
+                            Refunded Amount: <b> {{cancellationRefundAmount | currency:'INR'}} </b>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    Total Amount:<b> {{ticketResponse.totalAmountPaid | currency: 'INR'}}</b>
+                </div>
+
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

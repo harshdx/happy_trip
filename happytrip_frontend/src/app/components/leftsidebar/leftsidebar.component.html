@@ -1,0 +1,81 @@
+<!-- <h3>Content</h3>
+<mat-card class="sticky" style="height: 537px; width: 320px;">
+    <mat-card-header style="text-align: center; padding-left: 100px;">
+        <h2>Content</h2>
+    </mat-card-header>
+    <mat-card-content>
+
+        <mat-list>
+            <mat-list-item>
+                <button mat-raised-button>
+                    <mat-icon>directions_bus</mat-icon>
+                    Book a Ticket
+                </button>
+
+
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <button mat-raised-button>
+                    <mat-icon>manage_search</mat-icon>
+                    Search a Ticket
+                </button>
+
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card> -->
+
+<!-- <div class="col-3"> -->
+
+<div class="card sticky" style="width: 20.5rem;height: 600px; overflow: hidden; overflow: auto; padding-top: 70px; text-align: center;">
+
+    <mat-card-header style="text-align: center">
+        <h2>Content</h2>
+    </mat-card-header>
+    <mat-card-content>
+
+        <mat-list style="text-align: left;">
+            <mat-list-item>
+                <button mat-raised-button routerLink="/dashboard">
+                    <mat-icon>directions_bus</mat-icon>
+                    Book a Ticket
+                </button>
+
+
+            </mat-list-item>
+            <mat-divider></mat-divider>
+            <mat-list-item>
+                <button mat-raised-button (click)="openDialog()">
+                    <mat-icon>manage_search</mat-icon>
+                    Search a Ticket
+                </button>
+
+            </mat-list-item>
+            <mat-divider></mat-divider>
+
+            <mat-list-item *ngIf="isUserAdmin">
+                <button mat-raised-button routerLink="/dashboard/addnewbus">
+                    <mat-icon>add_bus</mat-icon>
+                    Add New Bus
+                </button>
+
+            </mat-list-item>
+            <mat-divider *ngIf="isUserAdmin"></mat-divider>
+
+            <mat-list-item *ngIf="isUserAdmin">
+                <button mat-raised-button routerLink="/dashboard/addnewvoucher">
+                    <mat-icon>redeem</mat-icon>
+                    Add New Voucher
+                </button>
+
+            </mat-list-item>
+            <mat-divider *ngIf="isUserAdmin"></mat-divider>
+
+        </mat-list>
+    </mat-card-content>
+
+</div>
+
+
+<!-- </div> -->

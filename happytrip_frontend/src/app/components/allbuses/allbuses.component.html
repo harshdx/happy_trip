@@ -1,0 +1,122 @@
+<div class="row" style="padding-top: 70px; padding-bottom: 5px;">
+    <div class="col-2" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        <b> {{getAllBusResponse.length}} Buses</b> found
+    </div>
+    <div class="col-1">
+
+    </div>
+    <div class="col-5" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        <b> {{getAllBusResponse[0].source | titlecase}}&nbsp;&nbsp; To &nbsp;&nbsp; {{getAllBusResponse[0].destination |
+            titlecase}}</b>
+
+    </div>
+
+    <div class="col-1">
+
+    </div>
+    <div class="col-2" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        <b>{{getAllBusResponse[0].departureDate | date}}</b>
+    </div>
+    <div class="col-1">
+
+    </div>
+
+
+</div>
+<div class="mat-card">
+    <table class="table table-bordered table-dark">
+        <thead>
+            <tr
+                style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                <th scope="col">Bus Name</th>
+                <th scope="col">Departure Time</th>
+                <th scope="col">Available Seats</th>
+                <th scope="col">Availability</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+<mat-list role="list">
+    <mat-list-item role="listitem" style="height: 140px;" *ngFor="let bus of getAllBusResponse">
+        <div class="mat-card" style="background-color: rgb(255, 226, 226);height: 130px; border: 1px solid black; ">
+            <mat-card-content>
+                <div class="row" style="padding-top: 15px;">
+                    <div class="col-4"
+                        style="width: 300px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+                        <div style="font-size: 20px;padding-left: 8px;"><b>{{bus.busName | titlecase}}</b> </div>
+                        <div style="padding-left: 12px; font-size: 15px;">{{bus.coachType | titlecase}}</div>
+                    </div>
+                    <!-- <div class="col-1"></div> -->
+
+                    <div class="col-2" style="font-size: large;"><b>{{bus.departureTime | date:"HH:mm"}}</b></div>
+                    <!-- <div class="col-1"></div> -->
+
+                    <div class="col-2"><b>{{bus.totalAvailableSeats}}</b></div>
+                    <!-- <div class="col-1"></div> -->
+                    <div class="col-2"> <button mat-raised-button color="warn"
+                            (click)="checkSeatAvailability(bus)">Check Availability</button>
+                    </div>
+                    <div class="col-2" style="margin-left: 3px;" *ngIf="isUserAdmin"> <button mat-raised-button color="warn"
+                            (click)="openDialog(bus.busId)">Passenger Details</button>
+                    </div>
+
+                </div>
+                <div class="row" style="padding-top: 15px; ">
+
+                    <div class="col-2" style="text-align: right;">
+                        <button mat-raised-button color="primary" [matMenuTriggerFor]="amenities">Amenities</button>
+                        <mat-menu #amenities="matMenu" yPosition="below">
+                            <div mat-menu-item *ngFor="let amenity of jsonParse(bus.amenities)">{{amenity | titlecase}}
+                            </div>
+                            <!-- <button mat-menu-item>how are you</button> -->
+                        </mat-menu>
+                    </div>
+                    <div class="col-3">
+                        <button mat-raised-button color="primary" [matMenuTriggerFor]="class">Class Available</button>
+                        <mat-menu #class="matMenu" yPosition="below">
+                            <div mat-menu-item *ngFor="let class of jsonParse(bus.classAvailable)">{{class | titlecase}}
+                            </div>
+                            <!-- <button mat-menu-item>how are you</button> -->
+                        </mat-menu>
+                    </div>
+                    <div class="col-3">
+                        <button mat-raised-button color="warn" [matMenuTriggerFor]="boarddroppoint">Boarding & Dropping
+                            points</button>
+                        <mat-menu #boarddroppoint="matMenu" yPosition="below">
+                            <button mat-menu-item>Boarding Point:&nbsp;<b>{{bus.boardingPoint | titlecase}}</b></button>
+                            <button mat-menu-item>Dropping Point:&nbsp;<b>{{bus.droppingPoint | titlecase}}</b></button>
+                        </mat-menu>
+                    </div>
+                    <div class="col-2">
+                        <button mat-raised-button color="primary" [matMenuTriggerFor]="bookpolicy">Booking
+                            Policies</button>
+                        <mat-menu #bookpolicy="matMenu" yPosition="below">
+                            <ul>
+                                <button mat-menu-item *ngFor="let policy of jsonParse(bus.bookingPolicies)">
+                                    <li>{{policy | titlecase}}</li>
+                                </button>
+                            </ul>
+                        </mat-menu>
+                    </div>
+                    <div class="col-2">
+                        <button mat-raised-button color="primary" [matMenuTriggerFor]="faredetail">Fare details</button>
+                        <mat-menu #faredetail="matMenu" yPosition="below">
+                            <button mat-menu-item
+                                *ngFor="let fdetail of jsonParse(bus.classWithFare)">{{fdetail.className | titlecase}}
+                                &nbsp;->&nbsp;<b> {{fdetail.fare | titlecase | currency:'INR'}}</b></button>
+                        </mat-menu>
+                    </div>
+                    <!-- <div class="col-2">
+
+                    </div> -->
+                    <!-- <button mat-raised-button color="warn">Check Availability</button> -->
+                    <!-- <button mat-raised-button color="warn">Check Availability</button>
+                    <button mat-raised-button color="warn">Check Availability</button>
+                    <button mat-raised-button color="warn">Check Availability</button> -->
+                </div>
+            </mat-card-content>
+        </div>
+    </mat-list-item>
+
+</mat-list>

@@ -1,0 +1,28 @@
+<button style="color: red;" (click)="closeDialog()"><mat-icon>cancel</mat-icon></button>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Ticket Id</th>
+        <th scope="col">User Id</th>
+        <th scope="col">User Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone No</th>
+        <th scope="col">Booked Seats</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let passenger of allPassengerDetails; let idx='index'">
+        <th scope="row">{{idx+1}}</th>
+        <td><b>{{passenger.ticketId}}</b></td>
+        <td>{{passenger.userId}}</td>
+        <td>{{passenger.userName | titlecase}}</td>
+        <td>{{passenger.emailId}}</td>
+        <td>{{passenger.phoneNumber}}</td>
+        <td><b>{{passenger.seatsBooked}}</b></td>
+      </tr>
+     
+    </tbody>
+  </table>

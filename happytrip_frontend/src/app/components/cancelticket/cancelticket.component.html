@@ -1,0 +1,20 @@
+<div class="container" style="height: 200px; width: 400px; border: solid 2px red;">
+    <div class="row">
+        <div style="font-size: 25px; font-family: 'Times New Roman', Times, serif;">
+            Enter Ticket Id:
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <button style="color: red;" (click)="closeDialog('end')"><mat-icon>cancel</mat-icon></button>
+        </div>
+        <mat-form-field appearance="outline" style="padding-top: 10px; width: 350px;">
+            <mat-label>Ticket Id</mat-label>
+            <input matInput placeholder="ticketid" [(ngModel)]="ticketId" style="width: 150px;">
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+        </mat-form-field>
+        <div>
+            <button mat-raised-button color="primary" (click)="closeDialog('confirm')">Confirm Cancel</button>
+
+        </div>
+    </div>
+</div>

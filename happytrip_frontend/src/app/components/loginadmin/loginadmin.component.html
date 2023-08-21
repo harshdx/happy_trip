@@ -1,0 +1,46 @@
+<div class="container" style="padding-top: 70px;">
+    <div class="row" style="width: 900px;">
+        <div
+            style="font-size: 30px; font-family: 'Times New Roman', Times, serif; text-align: center; background-color: black; color: white; width: 900px;">
+            <b>Login as Admin</b>
+        </div>
+
+        <div class="row" style="padding-top: 20px; ">
+            <div class="col-5"
+                style="text-align: right; font-family: 'Times New Roman', Times, serif; font-size: 25px;padding-top: 5px;">
+                <b> User Name:</b>
+            </div>
+            <div class="col-7" style="text-align: left;">
+                <mat-form-field style="width: 400px;">
+
+                    <mat-label>User Name</mat-label>
+                    <input matInput placeholder="User Name" name="username" [(ngModel)]="loginadminrequest.username">
+                </mat-form-field>
+            </div>
+        </div>
+
+
+        <div class="row" style="padding-top: 20px; ">
+            <div class="col-5"
+                style="text-align: right; font-family: 'Times New Roman', Times, serif; font-size: 25px;padding-top: 5px;">
+                <b> Password:</b>
+            </div>
+            <div class="col-7" style="text-align: left;">
+                <mat-form-field style="width: 400px;">
+
+                    <mat-label>Password:</mat-label>
+                    <input type="password" matInput placeholder="Password" name="password" [(ngModel)]="loginadminrequest.password">
+                </mat-form-field>
+            </div>
+        </div>
+
+        
+
+
+        <div class="row" style=" padding-top: 30px;  ">
+            <button mat-raised-button color="primary" style="width: 200px; margin-left: 300px;" (click)="submitLoginRequest()">Submit</button>
+
+        </div>
+
+    </div>
+</div>

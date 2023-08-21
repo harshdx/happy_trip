@@ -1,0 +1,39 @@
+<mat-toolbar color="warn" class="sticky">
+  <mat-toolbar-row fxLayoutAlign="space-between center">
+    <div fxLayout="row">
+      <button mat-button>
+        <!-- <mat-icon>group</mat-icon> -->
+
+        <!-- <span class="logo">FriendsCircle</span> -->
+        <img src="../../../assets/logo.png" alt="logo" width="200px" height="60px">
+      </button>
+      <!-- <div> -->
+      <!-- <button mat-button>
+          <mat-icon style="align-items:center">home_app_logo</mat-icon>
+          Home</button>
+        <button mat-button >
+          <mat-icon style="align-items:center">diversity_3</mat-icon>
+          Friends</button>
+          
+          <button mat-button>
+            <mat-icon style="align-items:center">hub</mat-icon>
+            Network</button>
+            <button mat-button >
+              <mat-icon style="align-items:center">account_circle</mat-icon>
+              Timeline</button>
+
+  
+       </div> -->
+
+    </div>
+    <div>
+      <button mat-raised-button color="primary" routerLink="/dashboard/loginadmin">
+        <mat-icon style="align-items:center" >shield_person</mat-icon>
+        SignIn as Admin</button>
+    </div>
+    <button mat-icon-button (click)="logout()">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </mat-toolbar-row>
+
+</mat-toolbar>

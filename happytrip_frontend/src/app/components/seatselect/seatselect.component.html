@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="col-5">
+        <mat-card style="margin-top: 70px; height: 500px; width: 360px; border: 1px solid red;">
+            <div style="text-align: center; font-family: 'Times New Roman', Times, serif; background-color: yellow;">
+                <b>Highlighted seats are available</b></div>
+
+            <mat-card-content>
+
+
+                <mat-chip-set aria-label="Fish selection" style="margin-left: 25px;">
+
+                    <div class="row" style="padding-bottom: 40px;"
+                        *ngFor="let seat of selectedBusSeatsData; let idx='index'">
+                        <div class="col-3" style="width: 100px;">
+
+                            <mat-chip [disabled]="seat.status==='reserved'?true:false"
+                                style="background-color: rgb(0, 52, 131);" (click)="addSeat(seat)">
+                                <div style="color: aliceblue;"> {{idx+1}}</div>
+                            </mat-chip>
+                        </div>
+
+                    </div>
+
+
+                </mat-chip-set>
+            </mat-card-content>
+        </mat-card>
+    </div>
+    <div class="col-7" style="background-color: rgb(233, 226, 226);">
+        <table class="table table-hover" style="margin-top: 70px; width: 400px; margin-left: 50px;">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Seat No</th>
+                    <th scope="col">Class</th>
+                    <th scope="col">Fare</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let selectedseat of selectedSeatsByUser; let i='index'">
+                    <th scope="row">{{i+1}}</th>
+                    <td><b>{{selectedseat.seatNo | titlecase}}</b></td>
+                    <td>{{selectedseat.class | titlecase}}</td>
+                    <td><b>{{selectedseat.fare | titlecase | currency:'INR'}}</b></td>
+                </tr>
+
+                <thead style="padding: 20px;">
+                    <tr
+                        style="color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); font-family:Georgia, 'Times New Roman', Times, serif;">
+                        <th>
+                            Total:
+                        </th>
+                        <td>{{selectedSeatsByUserFareTotal | currency:'INR'}}</td>
+                    </tr>
+                </thead>
+
+            </tbody>
+        </table>
+        <div style="text-align: right; padding-right: 100px;">
+            <button mat-raised-button color="primary" (click)="poceedToUserInf()">Proceed</button>
+        </div>
+    </div>
+</div>
